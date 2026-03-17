@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>刘诗程 - 个人主页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin-bottom: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+
+        .education-level {
+            font-size: 1em;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #667eea;
+        }
+
+        /* Main Content */
+        main {
+            padding: 40px 0;
+        }
+
+        section {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #555;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        /* Academic Background */
+        .education-info {
+            margin-bottom: 20px;
+        }
+
+        .education-info p {
+            margin-bottom: 8px;
+        }
+
+        .courses-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .course-item {
+            background: #f0f0f0;
+            padding: 12px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .skill-item {
+            margin-bottom: 15px;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .skill-bar {
+            width: 100%;
+            height: 12px;
+            background: #e0e0e0;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            border-radius: 6px;
+        }
+
+        /* Practical Experience */
+        .experience-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .experience-title {
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        .experience-period {
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        /* Interests Section */
+        .interests-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .interest-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 500;
+        }
+
+        .philosophy {
+            font-style: italic;
+            color: #666;
+            margin-top: 20px;
+            font-size: 1.1em;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1em;
+        }
+
+        .contact-item i {
+            color: #667eea;
+            font-size: 1.3em;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                padding: 40px 0;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 8px 0;
+            }
+
+            section {
+                padding: 20px;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .tagline {
+                font-size: 1em;
+            }
+
+            .interests-list {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="https://raw.githubusercontent.com/liushicheng-git/images/main/zjk.jpg" alt="张继科少年感图片" class="profile-img">
+            <h1>刘诗程</h1>
+            <p class="tagline">电子科技大学成都学院后端开发者</p>
+            <p class="education-level">本科 | QQ号: 2018517952 | 金牛座 | 来自中国</p>
+           
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#academic">学术背景</a></li>
+                <li><a href="#skills">技能能力</a></li>
+                <li><a href="#experience">实践经历</a></li>
+                <li><a href="#interests">个人兴趣</a></li>
+                <li><a href="#contact">联系方式</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="academic">
+            <h2>学术背景</h2>
+            <div class="education-info">
+                <p><strong>学校：</strong>电子科技大学成都学院 计算机学院 软件工程专业</p>
+                <p><strong>入学时间：</strong>2024年入学 2028年毕业</p>
+            </div>
+            <h3>核心课程</h3>
+            <div class="courses-list">
+                <div class="course-item">数据结构</div>
+                <div class="course-item">操作系统</div>
+                <div class="course-item">计算机网络</div>
+                <div class="course-item">计算机组成原理</div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>技能能力</h2>
+            <div class="skills-container">
+                <div class="technical-skills">
+                    <h3>技术技能</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">C/C++ 编程</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Python 基础</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">QT 技术</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">前端基础</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 60%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="non-technical-skills">
+                    <h3>非技术技能</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">自媒体引流</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>实践经历</h2>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="experience-title">芒果寝饰 实习</div>
+                    <div class="experience-period">2025.07-2025.8.25</div>
+                </div>
+                <p>负责后端系统开发与维护，参与项目需求分析与设计，完成多个功能模块的编码与测试工作，提升了系统性能和稳定性。</p>
+            </div>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="experience-title">图书管理系统</div>
+                    <div class="experience-period">校园项目</div>
+                </div>
+                <p>负责后端开发，使用C++和QT技术实现图书信息管理、借阅管理、用户管理等核心功能，采用模块化设计思想，提高了代码复用性和可维护性。</p>
+            </div>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="experience-title">坤坤华容道项目</div>
+                    <div class="experience-period">校园项目</div>
+                </div>
+                <p>专注于后端功能开发，实现游戏逻辑处理、数据存储与交互等功能，采用面向对象编程思想，确保代码结构清晰，易于扩展。</p>
+            </div>
+        </section>
+
+        <section id="interests">
+            <h2>个人兴趣</h2>
+            <h3>爱好</h3>
+            <div class="interests-list">
+                <div class="interest-item">打乒乓</div>
+                <div class="interest-item">打瓦兰特</div>
+                <div class="interest-item">跑步</div>
+            </div>
+            <div class="philosophy">
+                <p>个人哲学：永远不缺重新出发的勇气</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>联系方式</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i>📧</i>
+                    <span>2018517952@qq.com</span>
+                </div>
+                <div class="contact-item">
+                    <i>💼</i>
+                    <span>欢迎通过邮箱联系，期待合作机会</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 刘诗程. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
